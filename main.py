@@ -48,12 +48,10 @@ def obtenerRegistros():
     resultados = cursor.fetchall()
     
     if not resultados:
-        print("No hay nada cargado, aún")
+        print("No hay nada cargado")
     else:
         for producto in resultados:
             print("ID:",producto[0],"Nombre: ",producto[1],"Descripcion: ",producto[2],"Cantidad: ",producto[3],"Precio: ",producto[4],"Categoría: ",producto[5])
-    #for producto in resultados:
-        #print("ID:",producto[0],"Nombre: ",producto[1],"Descripcion: ",producto[2],"Cantidad: ",producto[3],"Precio: ",producto[4],"Categoría: ",producto[5])
 
     conexion.commit()
     conexion.close()
@@ -116,8 +114,8 @@ def reporteBajoStock():
 # Menu Principal
 def menu():
     print("------------------------")
-    print(">>>>>Menu Principal<<<<<")
-    print("---------------------")
+    print(">>>  Menu Principal  <<<")
+    print("------------------------")
     print("1. Registrar Producto")
     print("2. Obtener Registros")
     print("3. Actualizar Producto")
