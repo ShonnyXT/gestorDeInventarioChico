@@ -5,7 +5,7 @@ La aplicacion es capaz de:
 
 REGISTRO DE PRODUCTOS >> Permite al usuario agregar nuevos productos al inventario, solicitando los siguientes datos: Nombre, Descripcion, Cantidad, Precio y Categoría.
 
-VISUALIZACION DE PRODUCTOS >> La aplicacion muestra todos los productos registrados en el inventario
+VISUALIZACION DE PRODUCTOS >> La aplicacion muestra todos los productos registrados en el inventario.
 
 ACTUALIZACION DE PRODUCTOS >> Permite al usuario actualizar la cantidad disponible de un producto especifico usando su ID.
 

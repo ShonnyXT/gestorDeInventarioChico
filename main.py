@@ -62,8 +62,13 @@ def actualizarProducto():
     cursor = conexion.cursor()
 
     id = input("Ingrese el ID del Producto: ")
-    nuevaCantidad = int(input("Ingrese la nueva Cantidad: "))
-    cursor.execute("UPDATE inventario SET cantidad = ? WHERE id = ?",(nuevaCantidad,id))
+    # Nueva Funcion experimental
+    campo = input("Ingrese el campo que desea actualizar (nombre, descripcion, cantidad, precio, categoria): ")
+    nuevoValor = input(f"Ingrese el nuevo valor para {campo}: ")
+    cursor.execute(f"UPDATE inventario SET {campo} = ? WHERE id = ?",(nuevoValor, id))
+    # Vieja Funcion
+    #nuevaCantidad = int(input("Ingrese la nueva Cantidad: "))
+    #cursor.execute("UPDATE inventario SET cantidad = ? WHERE id = ?",(nuevaCantidad,id))
 
     conexion.commit()
     conexion.close()
@@ -84,7 +89,7 @@ def buscarRegistro():
     conexion = sqlite3.connect("baseDatos.db")
     cursor = conexion.cursor()
 
-    id = int(input("Ingrese el ID a buscar: "))
+    id = int(input("Ingrese el ID de Producto: "))
     cursor.execute("SELECT * FROM inventario WHERE id = ?",(id,))
     resultado = cursor.fetchone()
 
@@ -125,15 +130,7 @@ def menu():
     print("7. Salir del Programa")
     print("------------------------")
 
-def miniMenu():
-    print("---------------")
-    print("1. Nombre")
-    print("2. Descripcion")
-    print("3. Cantidad")
-    print("4. Precio")
-    print("5. Categoría")
-    print("---------------")
-
+# Cuerpo Principal de Gestor
 while True:
     crearTablaProductos()
     menu()
